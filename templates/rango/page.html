@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Rango</title>
+    </head>
+
+    <body>
+
+        <div>
+            {% if page %}
+
+                <h1>{{ page.title }}</h1> <br />
+                <div>{{page.category}}</div><br />
+                <div>{{page.url}} </div><br />
+                <div></div>{{page.views}} </div><br />
+
+            {% else %}
+                The specified page does not exist.
+            {% endif %}
+        </div>
+
+        <a href="/rango/">Index</a>
+    </body>
+</html>
