@@ -43,11 +43,6 @@ def populate():
         'url':'http://flask.pocoo.org', 
         'views':78} ]
 
-    '''
-    >
-        >  hi michael :D added views and likes here ---------------------------------------------
-    >
-    '''
 
     cats = {'Python': {'pages': python_pages, 'views': 128, 'likes':64},
         'Django': {'pages': django_pages, 'views': 64, 'likes': 32},
@@ -60,17 +55,9 @@ def populate():
     # and then adds all the associated pages for that category.
     for cat, cat_data in cats.items():
 
-        '''
-        >
-            >   hi again michael :) added views + likes in loop ---------------------------------------
-        >
-        '''
         c = add_cat(cat, cat_data['views'], cat_data['likes'])   
         for p in cat_data['pages']:
             add_page(c, p['title'], p['url'], p['views'])
-        
-
-        
 
     # Print out the categories we have added.
     for c in Category.objects.all():
@@ -85,11 +72,7 @@ def add_page(cat, title, url, views):
     p.save()
     return p
 
-'''
->
-    >   and again... added views and likes here -----------------------------------------
->
-'''
+
 def add_cat(name, views, likes):
     c = Category.objects.get_or_create(name=name)[0]
     c.views = views
